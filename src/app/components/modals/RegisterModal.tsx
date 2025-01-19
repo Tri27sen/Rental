@@ -1,5 +1,5 @@
 "use client"
-import { FC } from "react"
+//import { FC } from "react"
 import axios from "axios"
 import { AiFillGithub } from "react-icons/ai"
 import { FcGoogle } from "react-icons/fc"
@@ -13,9 +13,14 @@ import { toast } from "react-hot-toast"
 import Button from "../Button"
 import { signIn } from "next-auth/react"
 import useLoginModal from "../../hooks/useLoginModal"
-interface RegisterModalProps {}
-
-const RegisterModal: FC<RegisterModalProps> = ({}) => {
+/*
+interface RegisterModalProps {
+ /* isOpen:boolean ;
+  onOen:() =>void ;
+  onClose:() => void ; 
+}
+*/
+const RegisterModal = () => {
   const registerModal = useRegisterModal()
   const loginModal = useLoginModal()
   const [isLoading, setIsLoading] = useState(false)
@@ -27,7 +32,7 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
   } = useForm<FieldValues>({
     defaultValues: { name: "", email: "", password: "" },
   })
-
+// just the content with email
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true)
     axios
@@ -53,7 +58,7 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Welcome to Airbnb" subtitle="Create an account!" />
+      <Heading title="Welcome to My-App" subtitle="Create an account!" />
       <Input
         type="email"
         id="email"
@@ -124,7 +129,7 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
-      footer={footerContent}
+      footer={footerContent} // for google and github
     />
   )
 }

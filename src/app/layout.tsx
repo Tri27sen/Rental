@@ -35,8 +35,8 @@ export default function RootLayout({
         className={`
           ${font.className}${geistSans.variable} ${geistMono.variable} antialiased`}
       ><ClientOnly>
-        <Navbar />
         <RegisterModal />
+        <Navbar />
       </ClientOnly>
         {children}
         
