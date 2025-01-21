@@ -10,7 +10,7 @@ export default async function getReservations(params: IParams) {
   try {
     const { listingId, userId, authorId } = params
     const query: any = {}
-
+    console.log("inside the actions/getReservations file" , params)
     if (listingId) {
       query.listingId = listingId
     }
