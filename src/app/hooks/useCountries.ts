@@ -8,6 +8,8 @@ const formattedCountries = countries.map((country) => ({
   region: country.region,
 }))
 
+
+console.log("inside hooks/useCountries " , formattedCountries)
 const useCountries = () => {
   const getAll = () => formattedCountries
 

@@ -23,7 +23,7 @@ export default async function getFavoriteListings() {
     }))
 
     return safeFavorites
-  } catch (error: any) {
+  } catch (error:any) {
     throw new Error(error)
   }
 }
