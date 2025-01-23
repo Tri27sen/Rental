@@ -1,12 +1,13 @@
 
 import {Nunito} from 'next/font/google'
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+//import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/navbar"
 import ClientOnly from "./components/ClientOnly"
 import RegisterModal from "./components/modals/RegisterModal"
 import LoginModal from "./components/modals/LoginModal"
+import RentModal from "./components/modals/RentModal"
 import getCurrentUser from './actions/getCurrentUser';
 //import { User } from "@prisma/client" // for node runtime
 //import Modal from "./components/modals/Modal"
@@ -29,6 +30,7 @@ export default async function RootLayout({
       <body className={font.className}><ClientOnly>
         <LoginModal/>
         <RegisterModal />
+        <RentModal/>
         <Navbar  currentUser={currentUser}/>
       </ClientOnly>
         {children}
