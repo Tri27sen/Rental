@@ -6,16 +6,10 @@ import "./globals.css";
 import Navbar from "./components/navbar/navbar"
 import ClientOnly from "./components/ClientOnly"
 import RegisterModal from "./components/modals/RegisterModal"
+import LoginModal from "./components/modals/LoginModal"
+import getCurrentUser from './actions/getCurrentUser';
+//import { User } from "@prisma/client" // for node runtime
 //import Modal from "./components/modals/Modal"
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,19 +18,18 @@ export const metadata: Metadata = {
 const font = Nunito({
   subsets:["latin"]
 })
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const currentUser = await getCurrentUser()
   return (
     <html lang="en">
-      <body
-        className={`
-          ${font.className}${geistSans.variable} ${geistMono.variable} antialiased`}
-      ><ClientOnly>
+      <body className={font.className}><ClientOnly>
+        <LoginModal/>
         <RegisterModal />
-        <Navbar />
+        <Navbar  currentUser={currentUser}/>
       </ClientOnly>
         {children}
         

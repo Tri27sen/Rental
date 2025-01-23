@@ -1,6 +1,6 @@
 "use client"
 import { FC } from "react"
-import Container from "../container"
+import Container from "../Container"
 import CategoryBox from "../CategoryBox"
 import { usePathname, useSearchParams } from "next/navigation"
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb"

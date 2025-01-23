@@ -52,7 +52,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
             cursor-pointer
           "
         >
-          Airbnb your home
+          your home
         </div>
         <div
           onClick={toggleOpen}
@@ -119,7 +119,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
                   onClick={() => router.push("/properties")}
                   label="My properties"
                 />
-                <MenuItem onClick={rentModal.onOpen} label="Airbnb my home" />
+                <MenuItem onClick={rentModal.onOpen} label="my home" />
                 <MenuItem onClick={() => signOut()} label="Logout" />
               </>
             ) : (
