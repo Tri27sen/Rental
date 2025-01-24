@@ -15,11 +15,19 @@ const eslintConfig = [
   {
     // Add custom rules or settings here if needed
     rules: {
-      "@typescript-eslint/no-explicit-any": "error", // Prevent using `any` type
-      "react/react-in-jsx-scope": "off", // Example: Turn off rule for React import in scope (Next.js doesn't need it)
-      "no-unused-vars": ["warn", { argsIgnorePattern: "^_" }], // Warn for unused variables except those starting with "_"
-    },
-  },
-];
+     "@typescript-eslint/no-explicit-any": "warn",
+     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],   "react/react-in-jsx-scope": "off" ,
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false // Allow empty object type
+        }
+      }
+    ]
+  }
+} 
+]
 
 export default eslintConfig;

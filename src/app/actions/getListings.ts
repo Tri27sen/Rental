@@ -22,7 +22,7 @@ export default async function getListings(params: IListingsParams) {
       endDate,
       locationValue,
       category,
-    } = params
+    } =  await params
 
     let query: any = {}
     if (userId) {
