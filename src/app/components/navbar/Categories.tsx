@@ -1,5 +1,5 @@
 "use client"
-import { FC } from "react"
+//import { FC } from "react"
 import Container from "../Container"
 import CategoryBox from "../CategoryBox"
 import { usePathname, useSearchParams } from "next/navigation"
@@ -85,13 +85,13 @@ export const categories = [
   },
 ]
 
-interface CategoriesProps {}
 
-const Categories: FC<CategoriesProps> = ({}) => {
+
+const Categories = () => {
   const params = useSearchParams()
   const category = params?.get("category")
   const pathname = usePathname()
-
+  console.log("hi this is working")
   const isMainPage = pathname === "/"
 
   if (!isMainPage) {

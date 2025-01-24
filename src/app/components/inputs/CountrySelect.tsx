@@ -10,12 +10,10 @@ export type CountrySelectValue = {
   latlng: number[]
   region: string
 }
-
 interface CountrySelectProps {
   value?: CountrySelectValue
   onChange: (value: CountrySelectValue) => void
 }
-
 const CountrySelect: FC<CountrySelectProps> = ({ value, onChange }) => {
   const { getAll } = useCountries()
   return (
@@ -27,14 +25,16 @@ const CountrySelect: FC<CountrySelectProps> = ({ value, onChange }) => {
         value={value}
         onChange={(value) => onChange(value as CountrySelectValue)}
         formatOptionLabel={(option: any) => (
-          <div
+          <div 
             className="
-            flex flex-row items-center gap-3
-          "
+              flex flex-row items-center gap-3
+              w-full
+            "
           >
-            <div>{option.flag}</div>
-            <div>
-              {option.label},<span className="text-neutral-500 ml-1">{option.region}</span>
+            <div className="mr-2">{option.flag}</div>
+            <div className="flex-grow">
+              {option.label},
+              <span className="text-neutral-500 ml-1">{option.region}</span>
             </div>
           </div>
         )}
@@ -55,6 +55,5 @@ const CountrySelect: FC<CountrySelectProps> = ({ value, onChange }) => {
       />
     </div>
   )
-}
-
+ }
 export default CountrySelect

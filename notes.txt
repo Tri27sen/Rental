@@ -1,0 +1,7 @@
+1 . modify the register.route , same user or email cannot be reused
+
+
+1.modal ->layout page  -> client
+2.hooks ->backend
+3.action ->user action , gets the current user for frontend
+4.

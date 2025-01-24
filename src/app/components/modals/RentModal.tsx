@@ -9,7 +9,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
 import CountrySelect from "../inputs/CountrySelect"
 import dynamic from "next/dynamic"
 import Counter from "../inputs/Counter"
-//import ImageUpload from "../inputs/ImageUpload"
+import ImageUpload from "../inputs/ImageUpload"
 import Input from "../inputs/Input"
 import axios from "axios"
 import { toast } from "react-hot-toast"
@@ -32,7 +32,7 @@ const RentModal = () => {
 
   const [step, setStep] = useState(STEPS.CATEGORY)
   const [isLoading, setIsLoading] = useState(false)
-
+  console.log("rentModal : " , rentModal)
   const {
     register,
     handleSubmit,
@@ -54,6 +54,7 @@ const RentModal = () => {
     },
   })
 
+
   const category = watch("category")
   const location = watch("location")
   const guestCount = watch("guestCount")
@@ -65,10 +66,11 @@ const RentModal = () => {
     () =>
       dynamic(() => import("../Map"), {
         ssr: false,
+        loading: () => <p>Loading map...</p> // Optional loading state
       }),
     [location]
   )
-
+ 
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
       shouldDirty: true,
@@ -80,7 +82,7 @@ const RentModal = () => {
   const onBack = () => {
     setStep((value) => value - 1)
   }
-
+ 
   const onNext = () => {
     setStep((value) => value + 1)
   }
