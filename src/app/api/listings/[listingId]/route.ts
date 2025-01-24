@@ -12,13 +12,14 @@ export async function DELETE(
   { params }: { params: IParams }
 ) {
   const currentUser = await getCurrentUser()
-
+  console.log(currentUser)
   if (!currentUser) {
     return NextResponse.error()
   }
 
-  const { listingId } = params
-
+  const { listingId } =  await params
+  console.log("listingId -----")
+  console.log(listingId)
   if (!listingId || typeof listingId !== "string") {
     throw new Error("Invalid ID")
   }

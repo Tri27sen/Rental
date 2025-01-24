@@ -8,10 +8,11 @@ export async function POST(request: Request) {
   if (!currentUser) {
     return NextResponse.error()
   }
-
+  console.log(currentUser)
   const body = await request.json()
   const { title, description, imageSrc, category, roomCount, bathroomCount, guestCount, location, price } = body
-
+  console.log("listing route ----")
+  console.log(body)
   Object.keys(body).forEach((value: any) => {
     if (!body[value]) {
       NextResponse.error()
