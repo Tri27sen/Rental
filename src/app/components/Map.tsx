@@ -20,7 +20,8 @@ const Map: FC<MapProps> = ({ center }) => {
   useEffect(() => {
     // Safely set custom marker icon
     if (L && L.Icon && L.Icon.Default) {
-      delete L.Icon.Default.prototype._getIconUrl
+      const defaultIconPrototype = L.Icon.Default.prototype as any;
+      delete defaultIconPrototype._getIconUrl;
       L.Icon.Default.mergeOptions({
         iconUrl: markerIcon.src,
         iconRetinaUrl: markerIcon2x.src,
