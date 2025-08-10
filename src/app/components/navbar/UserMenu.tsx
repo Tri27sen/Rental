@@ -52,7 +52,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
             cursor-pointer
           "
         >
-          your home
+           Home
         </div>
         <div
           onClick={toggleOpen}

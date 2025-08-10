@@ -6,7 +6,8 @@ import ClientOnly from "@/app/components/ClientOnly"
 import Container from "@/app/components/Container"
 import EmptyState from "@/app/components/EmptyState"
 import ListingCard from "@/app/components/listings/ListingCard"
-
+import LandingHero from "@/app/components/LandingHero";
+//import getCurrentUser from "@/app//actions/getCurrentUser"
 interface HomeProps {
   searchParams: IListingsParams
 }
@@ -14,7 +15,7 @@ interface HomeProps {
 export default async function Home({ searchParams }: HomeProps) {
   const listings = await getListings(searchParams)
   const currentUser = await getCurrentUser()
-
+  //console.log(currentUser)
   if (listings.length === 0) {
     return (
       <ClientOnly>
@@ -25,6 +26,9 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <ClientOnly>
+       <LandingHero 
+       currentUser={currentUser}
+       />
       <Container>
         <div
           className="

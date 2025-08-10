@@ -1,3 +1,4 @@
+
 export const dynamic = "force-dynamic"
 import { Nunito } from "next/font/google"
 import "./globals.css"
@@ -10,9 +11,10 @@ import getCurrentUser from "@/app/actions/getCurrentUser"
 import RentModal from "@/app/components/modals/RentModal"
 import SearchModal from "../app/components/modals/SeachModal"
 
+
 export const metadata = {
-  title: "Airbnb",
-  description: "Airbnb clone",
+  title: "NestHive",
+  description: "An app that makes renting easy ",
 }
 
 const font = Nunito({
@@ -30,15 +32,17 @@ export default async function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
-          
+        
         <ToasterProvider />
         <SearchModal />
           <RentModal />
           <LoginModal />
           <RegisterModal />
           <Navbar currentUser={currentUser} />
+          <div className="pb-20 pt-28">{children}</div>
+        
         </ClientOnly>
-        <div className="pb-20 pt-28">{children}</div>
+       
       </body>
     </html>
   )

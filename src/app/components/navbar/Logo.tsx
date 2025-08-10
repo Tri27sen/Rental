@@ -9,14 +9,13 @@ interface LogoProps {}
 const Logo: FC<LogoProps> = ({}) => {
   const router = useRouter()
   return (
-    <Image
-      onClick={() => router.push("/")}
-      alt="Logo"
-      className="hidden md:block cursor-pointer"
-      height="100"
-      width="100"
-      src="/images/logo.png"
-    />
+    <span 
+      onClick={() => router.push("/")} 
+      className="hidden md:block cursor-pointer text-3xl font-bold"
+    >
+      <span className="text-blue-600">Nest</span>
+      <span className="text-black">Hive</span>
+    </span>
   )
 }
 

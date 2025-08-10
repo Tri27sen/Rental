@@ -11,7 +11,17 @@ import { formatISO } from "date-fns"
 import Heading from "../Heading"
 import Calendar from "../inputs/Calender"
 import Counter from "../inputs/Counter"
+/*
+The onSubmit function will be triggered
+If the user isn't on the final step (STEPS.INFO), they'll advance to the next step
+If the user is on the final step, the function will:
 
+Collect the current URL parameters
+Add the new search parameters to the query (location, guest count, room count, bathroom count, date range)
+Format these into a URL string using query-string's stringifyUrl
+Close the search modal
+Navigate to the homepage ("/") with the new query parameters attached
+*/
 enum STEPS {
   LOCATION = 0,
   DATE = 1,
