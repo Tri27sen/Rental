@@ -1,7 +1,6 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 DEMO : https://drive.google.com/drive/folders/1TR772ZwL2AxYdpVjlMNhbkP-e1mNxkW1
-Here’s a clean, professional **README.md** you can directly use for your GitHub repo 👇
 
 ---
 
