@@ -147,11 +147,7 @@ npm run dev
 * Configure environment variables in deployment settings
 * Ensure database and Cloudinary are properly connected
 
----
 
-## 📸 Screenshots (Optional)
-
-*Add screenshots of your UI here*
 
 ---
 
@@ -165,20 +161,7 @@ npm run dev
 
 ---
 
-## 🤝 Contributing
 
-Contributions are welcome! Feel free to fork the repo and submit a pull request.
 
 ---
 
-## 📄 License
-
-This project is open-source and available under the MIT License.
-
----
-
-If you want, I can also:
-
-* Make this **resume-ready (impact-focused)**
-* Add **architecture diagram + API flow**
-* Or convert it into a **perfect interview explanation (TCS / startups)**
